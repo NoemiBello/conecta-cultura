@@ -1,4 +1,3 @@
-/* 1. Variables */
 :root {
   --color-primario: #145da0;
   --color-primario-oscuro: #0b3d68;
@@ -15,15 +14,8 @@
   --ancho-contenido: 72rem;
 }
 
-.ejemplo {
-  width: 300px;
-  padding: 20px;
-  border: 2px solid;
-  /* ancho visible con content-box: 344px */
-}
+/* ===== Reset y base ===== */
 
-
-/* 2. Base y tipografía */
 *,
 *::before,
 *::after {
@@ -58,27 +50,23 @@ h1,
 h2,
 h3 {
   line-height: 1.2;
-  text-wrap: balance;
 }
 
+/* ===== Contenedor principal ===== */
+
 main {
-  width: min(100% - 2rem, var(--ancho-contenido));
+  width: 90%;
+  max-width: 70rem;
   margin-inline: auto;
 }
 
-main {
-  padding-block: 2rem 4rem;
-}
-
-section + section {
-  margin-top: 3rem;
-}
-
-/* Los componentes dentro de esta sección usarán el nuevo color. */
+/* ===== Cabecera y menú ===== */
 
 .cabecera-sitio {
-  padding: 1rem max(1rem, calc((100% - var(--ancho-contenido)) / 2));
-  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 5%;
   background: var(--color-primario-oscuro);
 }
 
@@ -91,15 +79,12 @@ section + section {
 
 .menu {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
-  margin: 1rem 0 0;
-  padding: 0;
-  list-style: none;
 }
 
 .menu a {
-    display: inline-block;
+  display: inline-block;
   padding: 0.5rem 0.75rem;
   color: #ffffff;
   border-radius: 0.5rem;
@@ -111,14 +96,16 @@ section + section {
   background: var(--color-primario);
 }
 
+/* ===== Tarjetas ===== */
 
+.tarjeta {
+  padding: 1.5rem;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
 
-
-
-/* 3. Estructura */
-/* 4. Navegación */
-
-/* 5. Componentes */
 .etiqueta {
   margin-bottom: 0.25rem;
   color: var(--color-secundario);
@@ -128,15 +115,13 @@ section + section {
   text-transform: uppercase;
 }
 
-.tarjeta,
-.mensaje-confirmacion,
-.formulario fieldset {
-  padding: 1.5rem;
-  background: var(--color-superficie);
-  border: 1px solid var(--color-borde);
-  border-radius: var(--radio);
-  box-shadow: var(--sombra);
+.grilla-tarjetas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
+
+/* ===== Botones ===== */
 
 .boton,
 button {
@@ -158,7 +143,8 @@ button:hover {
   background: var(--color-primario-oscuro);
 }
 
-/* 6. Tablas y formularios */
+/* ===== Tablas ===== */
+
 .tabla-contenedor {
   max-width: 100%;
   overflow-x: auto;
@@ -187,6 +173,8 @@ thead {
   background: var(--color-primario);
 }
 
+/* ===== Formulario ===== */
+
 .formulario {
   display: grid;
   gap: 1rem;
@@ -196,6 +184,11 @@ thead {
 .formulario fieldset {
   display: grid;
   gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
 }
 
 .formulario input,
@@ -215,8 +208,6 @@ thead {
   width: auto;
 }
 
-/* 7. Multimedia y utilidades */
-
 :focus-visible {
   outline: 3px solid var(--color-acento);
   outline-offset: 3px;
@@ -234,6 +225,21 @@ textarea:focus {
   border-color: var(--color-primario);
 }
 
+/* ===== Video e iframe ===== */
+
+video,
+iframe {
+  width: 100%;
+  max-width: 100%;
+}
+
+iframe {
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* ===== Salto de contenido y pie de página ===== */
+
 .salto-contenido {
   position: absolute;
   padding: 0.6rem 1rem;
@@ -244,4 +250,42 @@ textarea:focus {
 
 .salto-contenido:focus {
   transform: translateY(0);
+}
+
+.pie-sitio {
+  padding: 2rem;
+  color: #ffffff;
+  background: var(--color-primario-oscuro);
+  text-align: center;
+}
+
+.pie-sitio a {
+  color: #ffffff;
+}
+
+/* ===== Media query: pantallas desde 48rem ===== */
+
+@media (min-width: 48rem) {
+  .cabecera-sitio {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .grilla-tarjetas {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Media query: pantallas desde 64rem ===== */
+
+@media (min-width: 64rem) {
+  .grilla-tarjetas {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
