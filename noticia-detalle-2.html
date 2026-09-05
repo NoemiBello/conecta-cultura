@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Talleres y actividades de Conecta Cultura">
-  <title>Inicio | Conecta Cultura</title>
+  <meta name="description"
+    content="Conoce la jornada de huerto comunitario de Conecta Cultura: cultivo, cuidado de plantas y participación">
+  <title>Huerto comunitario | Conecta Cultura</title>
   <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
+
 <body>
   <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
   <header class="cabecera-sitio">
     <a class="marca" href="index.html">Conecta Cultura</a>
-    <nav aria-label="Navegación principal">
-      <ul class="menu">
-         <li><a href="index.html" >Inicio</a></li>
-         <li><a href="nosotros.html">Nosotros</a></li>
-         <li><a href="noticias.html">Noticias</a></li>
-         <li><a href="agenda.html">Agenda</a></li>
-         <li><a href="participar.html">Participar</a></li>
-      </ul>
+
+    <button id="boton-menu" class="boton-menu" type="button" aria-label="Abrir o cerrar menú principal"
+      aria-controls="menu-principal" aria-expanded="false">
+      <span aria-hidden="true">☰</span>
+    </button>
+
+    <nav id="menu-principal" class="menu" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="participar.html">Participar</a>
+      <a href="registro.html">Registro</a>
     </nav>
   </header>
 
- <main id="contenido-principal">
-  <article class="noticia-completa">
-    <header>
-      <p class="etiqueta">Formación cultural</p>
-      <h1>Nuevo taller de fotografía urbana</h1>
-      <p>Publicado el <time datetime="2026-08-22">22 de agosto de 2026</time></p>
-    </header>
+  <main id="contenido-principal">
+    <article class="noticia-completa">
+      <header>
+        <p class="etiqueta">Formación cultural</p>
+        <h1>Jornada de huerto comunitario</h1>
+        <p>Publicado el <time datetime="2026-08-22">22 de agosto de 2026</time></p>
+      </header>
 
-    <figure>
-      <img src="assets/img/huerto.jpg"
-           alt=""Participantes trabajando y aprendiendo sobre el cultivo de un huerto">
-      <figcaption>Participantes aprendiendo técnicas de cultivo y cuidado del huerto.</figcaption>
-    </figure>
+      <figure>
+        <img src="assets/img/huerto.jpg" alt="Participantes trabajando y aprendiendo sobre el cultivo de un huerto">
+        <figcaption>Participantes aprendiendo técnicas de cultivo y cuidado del huerto.</figcaption>
+      </figure>
 
-    <p>La actividad invita a aprender sobre el cultivo de hortalizas,
-       el cuidado de las plantas y las técnicas básicas para crear y mantener
-       un huerto de manera responsable y sostenible.</p>
-    <h2>Información de la actividad</h2>
-    <ul>
-      <li>Fecha: sábado 22 de agosto.</li>
-      <li>Duración: 3 horas.</li>
-      <li>Requisito: Requisito: ropa cómoda y disposición para trabajar con plantas y tierra.</li>
-    </ul>
-    <p><a href="noticias.html">Volver a todas las noticias</a></p>
-  </article>
-</main>
+      <p>La actividad invita a aprender sobre el cultivo de hortalizas,
+        el cuidado de las plantas y las técnicas básicas para crear y mantener
+        un huerto de manera responsable y sostenible.</p>
+
+      <p>Durante la jornada, los participantes compartirán ideas y colaborarán
+        en el cuidado del huerto comunitario. Lo aprendido les permitirá
+        comenzar pequeños cultivos en casa y aprovechar mejor sus espacios.</p>
+
+      <h2>Información de la actividad</h2>
+      <ul>
+        <li>Fecha: sábado 29 de agosto.</li>
+        <li>Duración: 3 horas.</li>
+        <li>Requisito: ropa cómoda y disposición para trabajar con plantas y tierra.</li>
+      </ul>
+      <p><a href="noticias.html">Volver a todas las noticias</a></p>
+    </article>
+  </main>
 
   <footer class="pie-sitio">
     <p><strong>Conecta Cultura</strong></p>
     <address>Contacto: <a href="mailto:hola@conectacultura.cl">hola@conectacultura.cl</a></address>
     <p><small>Proyecto académico · Desarrollo FullStack II</small></p>
   </footer>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/menu.js"></script>
 </body>
+
 </html>
