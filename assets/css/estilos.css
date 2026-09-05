@@ -108,7 +108,7 @@ section + section {
 
 /* ===== Tarjetas ===== */
 
-.tarjeta 
+.tarjeta, 
 .mensaje-confirmacion {
   padding: 1.5rem;
   background: var(--color-superficie);
